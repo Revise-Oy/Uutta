@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_rpt_crm_details" model="ir.ui.view">
+            <field name="name">RPT Details</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                    <page string="RPT Details" name="RPT Details">
+                        <group>
+                            <field name="rpt_id"/>
+                        </group>
+                        <field name="parrner_ids" nolabel="1" readonly="1">
+                            <tree>
+                                <field name="rpt_company_id"/>
+                                <field name="company_role_name"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
